@@ -42,13 +42,13 @@ HOST: evil_site.net
 ```
 #### Doing this type of indentation could make the server count one header as part of the previous part and could make the evil host work
 
-## Exploting Host header attack
+## Exploiting Host header attack
 #### Here are some exploitation that could done
 
 ## 1. Password reset poisoning
 ### If the attacker is able to change to change host headers to his website he could set up a website (example : evil_site.com) and could click forget password of some other user (victim)
 
-### many site use a temporary token to reset password of user , when they request password reset a link including this token is sent to there mail 
+### many site use a temporary token to reset password of user , when they request password reset a link including this token is sent to their mail 
 
 ### Example
 ```http
@@ -74,7 +74,7 @@ HOST: evil_site.com
 
 ### Instead of taking victim to good_site it takes it to bad_site which is controlled by attacker and now the attacker steals the tokenid of victim as he can just see the logs on his website which will show that victim visited `evil_site.com/reset/tokenid=12345`
 
-### The attacker than just use this token *(visit the actual site and use this token here he it would be `good_site.com/reset/tokenid=12345`)* and change victims passowrd controlling his account,
+### The attacker than just use this token *(visit the actual site and use this token here he it would be `good_site.com/reset/tokenid=12345`)* and change victims password controlling his account,
 
 >**NOTE** : good_site and evil_site are used just to give reference in reailty the attacker would always use something which looks like the actual website , example here if the actual site is `good_site.com` the attacker would use something like `good-site.com` instead of `evil-site.com`
 
