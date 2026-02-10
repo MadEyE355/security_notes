@@ -11,7 +11,7 @@
 
 ```http
 GET /some_data HTTP/1.1
-Host : good_site.net
+HOST: good_site.net
 ```
 ### As the request host is actually defined in the http request attacker can change it and could cause issues if site uses it to generate urls.
 
@@ -22,23 +22,23 @@ Host : good_site.net
 ### 1. simply changing the host header
 ```http
 GET /some_data HTTP/1.1
-Host : evil_site.net
+HOST: evil_site.net
 ```
 #### Here evil_site.net is controlled by attacker , if a site has no protection and allow any host header this could work
 
 ### 2. Multiple header
 ```http
 GET /some_data HTTP/1.1
-Host : good_site.net
-Host : evil_site.net
+HOST: good_site.net
+HOST: evil_site.net
 ```
 #### Supplying multiple headers could cause disagrement on the real host header causing the evil header to pass through.
 
 ### 3. Indenting
 ```http
 GET /some_data HTTP/1.1
-    Host : some_site.net
-Host : evil_site.net
+    HOST: some_site.net
+HOST: evil_site.net
 ```
 #### Doing this type of indentation could make the server count one header as part of the previous part and could make the evil host work
 
@@ -53,7 +53,7 @@ Host : evil_site.net
 ### Example
 ```http
 GET /reset-pass HTTP/1.1
-HOST : good_site.com
+HOST: good_site.com
 ```
 #### this could generate a link which would look something like 
 > `good_site.com/reset/tokenid=12345`
@@ -66,7 +66,7 @@ HOST : good_site.com
 ### Host header changed by attacker before forwarding request
 ```http
 GET /reset-pass HTTP/1.1
-HOST : evil_site.com
+HOST: evil_site.com
 ```
 
 ### Now the password link would look something like this
