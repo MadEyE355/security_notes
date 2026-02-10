@@ -37,7 +37,7 @@ HOST: evil_site.net
 ### 3. Indenting
 ```http
 GET /some_data HTTP/1.1
-    HOST: some_site.net
+    HOST: good_site.net
 HOST: evil_site.net
 ```
 #### Doing this type of indentation could make the server count one header as part of the previous part and could make the evil host work
