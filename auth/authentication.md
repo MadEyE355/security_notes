@@ -51,4 +51,4 @@ There are two main ways to  ways of storing the session id __Cookies__ and __Loc
 # Other points
 - Decentralized Session management is only prefered when working with distributed systems due to the increased complexity of token handling and invalidating
 - It is harder to invalidate token in decentralized 
-- By default cookies set by a site are only sent to that site and not even its subdomains , `Domain` attribute of cookies can be changed to change this behaviour 
+- By default _(when `Domain` omitted)_ cookies set by a site are only sent to that site and not even its subdomains , `Domain` attribute of cookies can be changed to change this behaviour 
