@@ -32,7 +32,8 @@ There are two main ways to  ways of storing the session id __Cookies__ and __Loc
 ### Session Lifetime
 - cookies attributes like `Expires` and `Max-Age` can be used to control lifetime 
 - Timeouts such as __Idle__ , __Absolute__ can be used to define time period of cookie expiry
-- When timer runs out server generates new cookie -> invalidates old one -> send new one to client 
+- When timer runs out server generates new cookie -> invalidates old one (optional) -> send new one to client __[Cookie Renew]__
+- _Refresh Tokens can be used in this model too_
 
 ## Decentralized
 ### in this model user state is not kept by server instead signed objects are used such as __jwt__
